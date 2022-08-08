@@ -40,7 +40,7 @@
                 <li><a href="/console/skills/list">Manage Skills</a></li>
                 <li><a href="/console/educations/list">Manage Education</a></li>
                 <li><a href="/console/contentblogs/list">Manage Content Blog</a></li>
-                <li><a href="/console/users/list">Manage Work Experience</a></li>
+                <li><a href="/console/workexperiences/list">Manage Work Experience</a></li>
             </ul>
 
         </section>
