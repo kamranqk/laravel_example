@@ -22,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome', [
-        'projects' => Project::all()
+        'projects' => Project::all(),
     ]);
 });
 
