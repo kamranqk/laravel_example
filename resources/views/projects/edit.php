@@ -13,6 +13,8 @@
         
     </head>
     <body>
+
+
         <header class="w3-padding">
 
             <h1 class="w3-text-red">Portfolio Console</h1>
@@ -45,6 +47,26 @@
                     <?php if($errors->first('title')): ?>
                         <br>
                         <span class="w3-text-red"><?= $errors->first('title'); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <div class="w3-margin-bottom">
+                    <label for="url">URL:</label>
+                    <input type="url" name="url" id="url" value="<?= old('url', $project->url) ?>">
+
+                    <?php if($errors->first('url')): ?>
+                        <br>
+                        <span class="w3-text-red"><?= $errors->first('url'); ?></span>
+                    <?php endif; ?>
+                </div>
+
+                <div class="w3-margin-bottom">
+                    <label for="slug">Slug:</label>
+                    <input type="text" name="slug" id="slug" value="<?= old('slug', $project->slug) ?>" required>
+
+                    <?php if($errors->first('slug')): ?>
+                        <br>
+                        <span class="w3-text-red"><?= $errors->first('slug'); ?></span>
                     <?php endif; ?>
                 </div>
 
