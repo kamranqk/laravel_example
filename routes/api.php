@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Models\Type;
 use App\Models\User;
 use App\Models\Project;
-
+use App\Models\Skill;
+use App\Models\ContentBlog;
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -28,6 +29,21 @@ Route::get('/types', function(){
     return $types;
 
 });
+
+// Route::get('/skills', function(){
+
+//     $skills = Skill::orderBy('name')->get();
+//     return $skills;
+
+// });
+
+// Route::get('/contentblogs', function(){
+
+//     $contentblog = ContentBlog::orderBy('title')->get();
+//     return $contentblog;
+
+// });
+
 
 Route::get('/projects', function(){
 

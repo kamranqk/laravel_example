@@ -25,8 +25,8 @@ class DatabaseSeeder extends Seeder
         Project::truncate();
         
         User::factory()->count(2)->create();
-        // Type::factory()->count(3)->create();
-        // Project::factory()->count(4)->create();
+        Type::factory()->count(3)->create();
+        Project::factory()->count(4)->create();
             
     }
 }
