@@ -31,12 +31,16 @@ class ProjectsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
+            'slug' => 'required|unique:projects|regex:/^[A-z\-]+$/',
+            'url' => 'nullable|url',
             'content' => 'required',
             'type_id' => 'required',
         ]);
 
         $project = new Project();
         $project->title = $attributes['title'];
+        $project->slug = $attributes['slug'];
+        $project->url = $attributes['url'];
         $project->content = $attributes['content'];
         $project->type_id = $attributes['type_id'];
         $project->user_id = Auth::user()->id;
@@ -59,11 +63,19 @@ class ProjectsController extends Controller
 
         $attributes = request()->validate([
             'title' => 'required',
+            'slug' => [
+                'required',
+                Rule::unique('projects')->ignore($project->id),
+                'regex:/^[A-z\-]+$/',
+            ],
+            'url' => 'nullable|url',
             'content' => 'required',
             'type_id' => 'required',
         ]);
 
         $project->title = $attributes['title'];
+        $project->slug = $attributes['slug'];
+        $project->url = $attributes['url'];
         $project->content = $attributes['content'];
         $project->type_id = $attributes['type_id'];
         $project->save();
