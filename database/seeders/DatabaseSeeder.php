@@ -19,11 +19,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-
+        Education::truncate();
         User::truncate();
         Type::truncate();
         Project::truncate();
         
+        Education::factory()->count(3)->create();
         User::factory()->count(2)->create();
         Type::factory()->count(3)->create();
         Project::factory()->count(4)->create();
