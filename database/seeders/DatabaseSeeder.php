@@ -23,10 +23,14 @@ class DatabaseSeeder extends Seeder
         User::truncate();
         Type::truncate();
         Project::truncate();
+        Skill::truncate();
+        ContentBlog::truncate();
         
-        Education::factory()->count(3)->create();
+        Skill::factory()->count(2)->create();
+        ContentBlog::factory()->count(2)->create();
+        Education::factory()->count(2)->create();
         User::factory()->count(2)->create();
-        Type::factory()->count(3)->create();
+        Type::factory()->count(2)->create();
         Project::factory()->count(4)->create();
             
     }

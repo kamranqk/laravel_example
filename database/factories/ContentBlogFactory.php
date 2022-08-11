@@ -15,7 +15,7 @@ class ContentBlogFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
-            'content' => $this->faker->paragraph,
+            'content' => $this->faker->sentence,
         ];
     }
 

@@ -7,6 +7,7 @@ use App\Models\Type;
 use App\Models\User;
 use App\Models\Project;
 use App\Models\Skill;
+use App\Models\Education;
 use App\Models\ContentBlog;
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +24,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/educations', function(){
+
+    $educations = Education::orderBy('instituteName')->get();
+    return $educations;
+
+});
+
+Route::get('/users', function(){
+
+    $users = User::orderBy('first')->get();
+    return $users;
+
+});
+
 Route::get('/types', function(){
 
     $types = Type::orderBy('title')->get();
@@ -30,19 +45,19 @@ Route::get('/types', function(){
 
 });
 
-// Route::get('/skills', function(){
+ Route::get('/skills', function(){
 
-//     $skills = Skill::orderBy('name')->get();
-//     return $skills;
+     $skills = Skill::orderBy('name')->get();
+     return $skills;
 
-// });
+ });
 
-// Route::get('/contentblogs', function(){
+ Route::get('/contentblogs', function(){
 
-//     $contentblog = ContentBlog::orderBy('title')->get();
-//     return $contentblog;
+     $contentblogs = ContentBlog::orderBy('title')->get();
+     return $contentblogs;
 
-// });
+ });
 
 
 Route::get('/projects', function(){
