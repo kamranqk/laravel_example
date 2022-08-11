@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('contentblogs', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('image')->nullable();
             $table->string('content');
             $table->timestamps();
         });

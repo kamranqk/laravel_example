@@ -86,3 +86,5 @@ Route::post('/console/contentblogs/add', [ContentBlogsController::class, 'add'])
 Route::get('/console/contentblogs/edit/{contentblog:id}', [ContentBlogsController::class, 'editForm'])->where('education', '[0-9]+')->middleware('auth');
 Route::post('/console/contentblogs/edit/{contentblog:id}', [ContentBlogsController::class, 'edit'])->where('education', '[0-9]+')->middleware('auth');
 Route::get('/console/contentblogs/delete/{contentblog:id}', [ContentBlogsController::class, 'delete'])->where('education', '[0-9]+')->middleware('auth');
+Route::get('/console/contentblogs/image/{contentblog:id}', [ContentblogsController::class, 'imageForm'])->where('contentblog', '[0-9]+')->middleware('auth');
+Route::post('/console/contentblogs/image/{contentblog:id}', [ContentblogsController::class, 'image'])->where('contentblog', '[0-9]+')->middleware('auth');

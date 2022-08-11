@@ -43,15 +43,23 @@
 
             <table class="w3-table w3-stripped w3-bordered w3-margin-bottom">
                 <tr class="w3-red">
+                    <th></th>
                     <th>Title</th>
                     <th>Content</th>
+                    <th></th>
                     <th></th>
                     <th></th>
                 </tr>
                 <?php foreach($contentblogs as $contentblog): ?>
                     <tr>
+                      <td> 
+                        <?php if($contentblog->image): ?>
+                          <img src="<?= asset('storage/'.$contentblog->image) ?>" width="150" height="150">
+                        <?php endif; ?>
+                      </td>
                         <td><?= $contentblog->title ?></td>
                         <td><?= $contentblog->content ?></td>
+                        <td><a href="/console/contentblogs/image/<?= $contentblog->id ?>">Image</a></td>
                         <td><a href="/console/contentblogs/edit/<?= $contentblog->id ?>">Edit</a></td>
                         <td><a href="/console/contentblogs/delete/<?= $contentblog->id ?>">Delete</a></td>
                     </tr>

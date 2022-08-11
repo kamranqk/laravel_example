@@ -15,7 +15,7 @@ class SkillFactory extends Factory
     {
         return [
             'name' => $this->faker->sentence,
-            'score' => $this->faker->paragraph,
+            'score' => $this->faker->sentence,
         ];
     }
 }

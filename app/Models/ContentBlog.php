@@ -17,6 +17,7 @@ class ContentBlog extends Model
     protected $table = 'contentblogs';
     protected $fillable = [
         'title',
+        'image',
         'content',
     ];
 }

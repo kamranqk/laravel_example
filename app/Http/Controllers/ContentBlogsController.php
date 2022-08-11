@@ -70,4 +70,28 @@ class ContentBlogsController extends Controller
         return redirect('/console/contentblogs/list')
             ->with('message', 'Content Blog has been deleted!');        
     }
+    
+    public function imageForm(ContentBlog $contentblog)
+   {
+      return view('contentblogs.image', [
+         'contentblog' => $contentblog,
+      ]);
+   }
+
+   public function image(ContentBlog $contentblog)
+   {
+      $attributes = request()->validate([
+         'image' => 'required|image',
+      ]);
+
+      Storage::delete($contentblog->image);
+      
+      $path = request()->file('image')->store('contentblogs');
+
+      $contentblog->image = $path;
+      $contentblog->save();
+      
+      return redirect('/console/contentblogs/list')
+         ->with('message', 'Contemt Blog image has been edited!');
+   }
 }
