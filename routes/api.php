@@ -71,7 +71,7 @@ Route::get('/projects', function(){
 
         if($project['image'])
         {
-            $projects[$key]['image'] = env('APP_URL').'storage/'.$project['image'];
+            $projects[$key]['image'] = env('APP_URL').$project['image'];
         }
     }
 
@@ -86,7 +86,7 @@ Route::get('/projects/profile/{project?}', function(Project $project){
 
     if($project['image'])
     {
-        $project['image'] = env('APP_URL').'storage/'.$project['image'];
+        $project['image'] = env('APP_URL').$project['image'];
     }
 
     return $project;
